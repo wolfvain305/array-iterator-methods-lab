@@ -138,3 +138,164 @@ console.log('Exercise 3 Correct Result: ',
         { first: 'Katherine', last: 'Blodgett', year: 1898, passed: 1979 }
     ]
 )
+
+// Array.prototype.find()
+
+// 4. Use Array.prototype.find() to identify the inventor with the first name 'Ada' from an array of inventor objects
+
+// - You have an array of objects, each representing an inventor with various properties including their first name.
+// -  Utilize the Array.prototype.find() method to locate the object for the inventor named 'Ada'.
+// -  Assign the found inventor object to the variable 'inventorNamedAda'
+
+let inventorNamedAda = {}
+
+// Enter you solution code here:
+
+inventorNamedAda = inventors.find((inventors) => {
+    return (inventors.first === "Ada")
+})
+
+// Check your return value:
+console.log('Exercise 4 My Result: ', inventorNamedAda)
+console.log('Exercise 4 Correct Result: ', { first: 'Ada', last: 'Lovelace', year: 1815, passed: 1852 })
+
+// Array.prototype.map()
+
+// 5. Use the Array.prototype.map() method to reformat each name in the 'people' array. 
+// The goal is to convert names from "Last, First" format to "First Last" format.
+
+// Hint: Use the String.prototype.split method to separate the first and last names. You can split the string using ', ' as the separator.
+// After splitting the names, rearrange them to the "First Last" format.
+
+let firstLast = []
+
+// Enter your solution code here:
+
+firstLast = people.map(name => {
+    const [last, first] = name.split(', ')
+    return `${first} ${last}`
+})
+
+// Check your return value:
+console.log('Exercise 5 My Result: ', firstLast)
+console.log('Exercise 5 Correct Result: ',
+    [
+        'Carl Becker',
+        'Samuel Beckett',
+        'Mick Beddoes',
+        'Henry Beecher',
+        'Ludwig Beethoven',
+        'Menachem Begin',
+        'Hilaire Belloc',
+        'Saul Bellow',
+        'Robert Benchley',
+        'Peter Benenson',
+        'David Ben-Gurion',
+        'Walter Benjamin',
+        'Tony Benn',
+        'Chester Bennington',
+        'Leana Benson',
+        'Silas Bent',
+        'Lloyd Bentsen',
+        'Ric Berger',
+        'Ingmar Bergman',
+        'Luciano Berio',
+        'Milton Berle',
+        'Irving Berlin',
+        'Eric Berne',
+        'Sandra Bernhard',
+        'Yogi Berra',
+        'Halle Berry',
+        'Wendell Berry',
+        'Erin Bethea',
+        'Aneurin Bevan',
+        'Ken Bevel',
+        'Joseph Biden',
+        'Ambrose Bierce',
+        'Steve Biko',
+        'Josh Billings',
+        'Frank Biondo',
+        'Augustine Birrell',
+        'Elk Black',
+        'Robert Blair',
+        'Tony Blair',
+        'William Blake'
+    ]
+)
+
+// Array.prototype.some()
+
+// 6. Determine if there is at least one person in the devs array who is 18 years old or older.
+
+// - You have an array of people with their respective ages.
+// - Use the Array.prototype.some() method to check if any person in the array is 18 years old or older.
+// - Store the result (true or false) in the variable 'isAdultPresent'. 
+
+let isAdultPresent = null
+
+// Enter your solution code here:
+
+isAdultPresent = devs.some((devs) => {
+    const age = Number(2024) - parseInt(devs.year)
+    return age >= 18
+    })
+
+// Check your return value:
+console.log('Exercise 6 My Result: ', isAdultPresent)
+console.log('Exercise 6 Correct Result: ', true)
+
+// Array.prototype.every()
+
+// 7. Use Array.prototype.every() to determine if every person in the devs array is 19 years old or older.
+
+// - You have an array of individuals, each with their year of birth represented by the 'year' property.
+// - Use the Array.prototype.every() method to verify if every individual in the array is at least 19 years old.
+// - Store the result (true or false) in the variable 'isEveryone19OrOlder'.
+
+let isEveryone19OrOlder = null
+
+// Enter your solution code here:
+
+isEveryone19OrOlder = devs.every((devs) => {
+    const age = 2024 -devs.year
+    return age < 19
+})
+
+// Check your return value:
+console.log('Exercise 7 My Result: ', isEveryone19OrOlder)
+console.log('Exercise 7 Correct Result: ', false)
+
+// Array.prototype.find()
+
+// 8. Use Array.prototype.find() to identify and retrieve the comment object with a specific ID 823423 from an array of comment objects.
+
+// - Assign the found comment object to the variable 'commentById'.
+
+
+let commentById = {}
+
+// Enter your solution code here:
+
+commentById = comments.find(comments => comments.id === 823423)
+    
+
+
+// Check your return value:
+console.log('Exercise 8 My Result: ', commentById)
+console.log('Exercise 8 Correct Result: ', { text: 'Super good', id: 823423 })
+
+// Array.prototype.findIndex()
+
+// 9. Determine the index of the comment that has a specific ID 123523 in an array of comment objects.
+
+// - Store the index in the variable 'idx'.
+
+let idx = null
+
+// Enter your solution code here:
+
+idx = comments.findIndex(comments => comments.id === 123523)
+
+// Check your return value:
+console.log('Exercise 9 My Result: ', idx)
+console.log('Exercise 9 Correct Result: ', 3)
